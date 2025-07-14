@@ -81,7 +81,7 @@ npm install
 1. Open [http://localhost:5173](http://localhost:5173) in your browser.
 2. Add users using the input field.
 3. Select a user from the dropdown and click **Claim Points** to award random points.
-4. View the real-time leaderboard and point history.
+
 
 ---
 
@@ -97,8 +97,6 @@ npm install
 - `PUT /points/add/:id` — Add points to a user  
   **Body:** `{ "points": 10 }`
 
-### **Point History (if implemented)**
-- `GET /points/history` — Get all point claim history
 
 ---
 
