@@ -12,13 +12,13 @@ function App() {
   const [leaderboard, setLeaderboard] = useState([]);
 
   const fetchUsers = async () => {
-    const res = await axios.get("http://localhost:3000/user/getall");
+    const res = await axios.get("https://leaderboard-system-675b.onrender.com/user/getall");
     setUsers(res.data.users);
   };
 
   const fetchLeaderboard = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/user/sorted");
+      const res = await axios.get("https://leaderboard-system-675b.onrender.com/user/sorted");
       if(res.data.success){
         toast.success(res.data.message);
       }

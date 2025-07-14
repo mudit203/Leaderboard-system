@@ -10,7 +10,7 @@ const Adduser = ({ refreshUsers }) => {
   const addUser = async () => {
 
     try {
-      const res = await axios.post("http://localhost:3000/user/add", { name });
+      const res = await axios.post("https://leaderboard-system-675b.onrender.com/user/add", { name });
       if (res.data.success) {
         toast.success(`${res.data.message}: ${name}`);
       }

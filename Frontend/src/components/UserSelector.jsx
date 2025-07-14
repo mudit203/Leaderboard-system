@@ -10,7 +10,7 @@ const UserSelector = ({onPointsClaimed}) => {
 
     const fetchUsers = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/user/getall");
+            const res = await axios.get("https://leaderboard-system-675b.onrender.com/user/getall");
             setUsers(res.data.users);
         } catch (err) {
             console.error("Error fetching users:", err);
@@ -28,7 +28,7 @@ const UserSelector = ({onPointsClaimed}) => {
 
         try {
             const res = await axios.put(
-                `http://localhost:3000/points/add/${selectedUser}`,
+                `https://leaderboard-system-675b.onrender.com/points/add/${selectedUser}`,
                 { points: randomPoints }
             );
 
