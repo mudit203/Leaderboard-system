@@ -50,7 +50,7 @@ export const addpoints = async (req, res) => {
         await PointHistory.create({
             user: user._id,
             points: points,
-            timestamp: new Date()
+            timestamp: new Date().toLocaleString()
         });
        
         res.status(200).json({
