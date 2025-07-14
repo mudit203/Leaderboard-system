@@ -7,17 +7,23 @@ import Leaderboard from "./components/Leaderboard";
 import { toast } from 'sonner';
 
 function App() {
+    // State to hold all users, the selected user, and the leaderboard
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState("");
   const [leaderboard, setLeaderboard] = useState([]);
 
+
+    // Fetch all users from the backend
   const fetchUsers = async () => {
     const res = await axios.get("https://leaderboard-system-675b.onrender.com/user/getall");
     setUsers(res.data.users);
   };
 
+
+  // Fetch the sorted leaderboard from the backend
   const fetchLeaderboard = async () => {
     try {
+      // Show a toast notification when the leaderboard is refreshed
       const res = await axios.get("https://leaderboard-system-675b.onrender.com/user/sorted");
       if(res.data.success){
         toast.success(res.data.message);
@@ -27,12 +33,14 @@ function App() {
       console.error("Error fetching leaderboard:", err);
     }
   };
-
+// Refresh both users and leaderboard data
   const refreshData = async () => {
     await fetchUsers();
     await fetchLeaderboard();
   };
  
+
+  // Fetch data when the component mounts
   useEffect(() => {
     refreshData();
   }, []);
@@ -43,7 +51,7 @@ function App() {
     style={{
       backgroundImage: `url(${img})`,
       backgroundSize: "cover",
-      //backgroundPosition: "center",
+     
       backgroundAttachment: "fixed"
     }}
     >

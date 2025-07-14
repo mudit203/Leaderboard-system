@@ -1,9 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 
+// Leaderboard component displays the sorted list of users with their ranks and points
 const Leaderboard = ({ leaderboard }) => {
   return (
     <div className="my-8 w-full max-w-2xl mx-auto">
-      {/* Golden animated line */}
+      
       <div className="relative mb-6">
         <div className="h-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 rounded-full overflow-hidden">
           <div className="h-full w-full bg-gradient-to-r from-transparent via-white to-transparent animate-pulse opacity-30"></div>

@@ -1,6 +1,11 @@
 import User from '../models/user.js';
 import PointHistory from '../models/pointhistory.js';
 
+
+//THESE ARE ALL THE CONTROLLERS OF THE LEADERBOARD SYSTEM
+
+
+//Controller to create a new user,creates a new user with name and points in the User model with default points=0
 export const createuser= async(req,res)=>{
     try {
         const {name}=req.body;
@@ -21,6 +26,8 @@ export const createuser= async(req,res)=>{
     }
 }
 
+
+//Controller for updating points generated from the frontend and createing a point history of the user in the pointhistory model.
 export const addpoints = async (req, res) => {
     try {
         const { id } = req.params;
@@ -28,7 +35,7 @@ export const addpoints = async (req, res) => {
 
         const user = await User.findByIdAndUpdate(
             id,
-            { $inc: { points: points } },
+            { $inc: { points: points } },        //increments the points 
             { new: true }
         );
 
@@ -38,8 +45,8 @@ export const addpoints = async (req, res) => {
                 message: "User not found"
             });
         }
-
-        
+  
+  //Creates a new object for point history everytime a points are added to a user      
         await PointHistory.create({
             user: user._id,
             points: points,
@@ -56,6 +63,9 @@ export const addpoints = async (req, res) => {
     }
 };
 
+
+//Controller for sending all the created users from the User model in response
+
 export const getAllUsers = async (req, res) => {
     try {
         const users = await User.find();
@@ -68,12 +78,15 @@ export const getAllUsers = async (req, res) => {
     }
 };
 
+
+//Controller for sending all the users in descending order from the User model on the basis of points
+
 export const getSortedUsers = async (req, res) => {
     try {
-        const users = await User.find().sort({ points: -1 });
+        const users = await User.find().sort({ points: -1 });     //sorts points in descending order
         res.status(200).json({
             success: true,
-            users,
+            users,                                                 //sends the sorted users in response
             message:"leaderboard refreshed successfully"
         });
     } catch (error) {
