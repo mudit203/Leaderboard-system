@@ -45,8 +45,7 @@ cd Leaderboard-system
 ### **2. Backend Setup**
 
 ```bash
-cd Backend
-npm install
+npm run dev
 ```
 
 - Create a `.env` file in the `Backend` directory:
@@ -64,8 +63,9 @@ npm install
 ### **3. Frontend Setup**
 
 ```bash
-cd ../Frontend
+cd Frontend
 npm install
+npm run build
 ```
 
 - Start the frontend development server:
