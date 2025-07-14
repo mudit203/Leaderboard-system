@@ -25,13 +25,11 @@ export const addpoints = async (req, res) => {
         const { id } = req.params;
         const { points } = req.body;
 
-       
         const user = await User.findByIdAndUpdate(
             id,
             { $inc: { points: points } },
             { new: true }
         );
-        // await user.save();
 
         if (!user) {
             return res.status(404).json({
@@ -40,6 +38,13 @@ export const addpoints = async (req, res) => {
             });
         }
 
+        
+        await PointHistory.create({
+            user: user._id,
+            points: points,
+            timestamp: new Date()
+        });
+       
         res.status(200).json({
             success: true,
             message: "Points added successfully",
