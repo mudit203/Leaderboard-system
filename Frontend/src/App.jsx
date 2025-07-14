@@ -1,4 +1,4 @@
-import img from './assets/gradient-yellow-star-background_52683-153247.jpg'
+import img from './assets/bg.jpg'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UserSelector from "./components/UserSelector";
@@ -51,11 +51,18 @@ function App() {
     style={{
       backgroundImage: `url(${img})`,
       backgroundSize: "cover",
-     
+      
       backgroundAttachment: "fixed"
     }}
     >
-      <h1 className="text-3xl font-bold mb-6 text-center">Leaderboard System</h1>
+     <h1
+  className="text-5xl font-bold mb-6 text-center tracking-wide"
+  style={{
+    textShadow: "0 2px 8px rgba(251,191,36,0.5), 0 1px 0 #fff"
+  }}
+>
+  Leaderboard System
+</h1>
       <div className='flex flex-col items-center justify-center '>
       <UserSelector 
         users={users} 

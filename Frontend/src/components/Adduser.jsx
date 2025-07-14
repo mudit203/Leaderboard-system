@@ -41,7 +41,7 @@ const Adduser = ({ refreshUsers }) => {
       />
       </div>
       <div>
-      <Button className="bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold border-none shadow-md transition" onClick={addUser}>Add user</Button>
+      <Button className="bg-black hover:bg-yellow-700 text-white font-bold border-none shadow-md transition" onClick={addUser}>Add user</Button>
       </div>
       </div>
      
