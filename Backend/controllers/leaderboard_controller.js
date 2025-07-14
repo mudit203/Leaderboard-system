@@ -1,4 +1,5 @@
 import User from '../models/user.js';
+import PointHistory from '../models/pointhistory.js';
 
 export const createuser= async(req,res)=>{
     try {
