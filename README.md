@@ -1,6 +1,6 @@
 # 🏆 Leaderboard System
 
-A full-stack, real-time leaderboard web application where users can claim random points, view their ranking, and see a history of all point claims. Built with **React (Vite, shadcn/ui, Tailwind CSS)** on the frontend and **Node.js, Express, MongoDB (Mongoose)** on the backend.
+A full-stack, real-time leaderboard web application where users can claim random points, view their ranking, and stores a history of all point claims. Built with **React (Vite, shadcn/ui, Tailwind CSS)** on the frontend and **Node.js, Express, MongoDB (Mongoose)** on the backend.
 
 ---
 
